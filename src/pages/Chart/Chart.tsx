@@ -1,9 +1,9 @@
 import styles from "./Chart.module.css";
-import { Album } from "../../types/chart.type";
-
 import { useCallback, useEffect, useState } from "react";
-import ChartFilter, { Order } from "../../components/ChartFilter/ChartFilter";
+import { Link } from "react-router-dom";
 import { getChart } from "../../api/getChart";
+import { Album } from "../../types/chart.type";
+import ChartFilter, { Order } from "../../components/ChartFilter/ChartFilter";
 import ChartItem from "../../components/ChartItem/ChartItem";
 
 const Chart = () => {
@@ -37,11 +37,13 @@ const Chart = () => {
         <ChartFilter onFilterChange={fetchChart} />
         <ul>
           {albums.map((album, index) => (
-            <ChartItem
-              key={album.id.attributes["im:id"]}
-              album={album}
-              index={index}
-            />
+            <Link to={album.id.attributes["im:id"]} state={album}>
+              <ChartItem
+                key={album.id.attributes["im:id"]}
+                album={album}
+                index={index}
+              />
+            </Link>
           ))}
         </ul>
       </main>
