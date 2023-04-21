@@ -1,5 +1,5 @@
+import { Album } from "../../types/chart.type";
 import styles from "./ChartItem.module.css";
-import { Album } from "../types/chart.type";
 
 interface AlbumItemProps {
   album: Album;

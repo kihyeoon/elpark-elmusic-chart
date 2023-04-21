@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "./Chart.module.css";
 import { Album } from "../types/chart.type";
-import ChartItem from "../components/ChartItem";
+
 import { useCallback, useEffect, useState } from "react";
 import ChartFilter from "../components/ChartFilter/ChartFilter";
 import { getChart } from "../api/getChart";
+import ChartItem from "../components/ChartItem/ChartItem";
 
 const Chart = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
