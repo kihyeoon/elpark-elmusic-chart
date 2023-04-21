@@ -1,17 +1,19 @@
 import { ChangeEvent, useCallback, useState } from "react";
 import styles from "./ChartFilter.module.css";
 
+export type Order = "asc" | "desc";
+
 interface ChartFilterProps {
-  onFilterChange: (order: "asc" | "desc", search: string) => void;
+  onFilterChange: (order: Order, search: string) => void;
 }
 
 const ChartFilter = ({ onFilterChange }: ChartFilterProps) => {
-  const [order, setOrder] = useState<"asc" | "desc">("asc");
+  const [order, setOrder] = useState<Order>("asc");
   const [search, setSearch] = useState<string>("");
 
   const handleOrderChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
-      const newOrder = e.target.value as "asc" | "desc";
+      const newOrder = e.target.value as Order;
       setOrder(newOrder);
       onFilterChange(newOrder, search);
     },
