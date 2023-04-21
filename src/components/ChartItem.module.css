@@ -43,22 +43,21 @@
   align-items: flex-start;
   max-width: 30rem;
   font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .mainInfo h2 {
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   letter-spacing: -1px;
   line-height: 1.75;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 30rem;
 }
 
 .mainInfo p {
   padding-top: 0.625rem;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   letter-spacing: -1px;
   opacity: 0.5;
 }
