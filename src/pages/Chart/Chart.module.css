@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.075rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}

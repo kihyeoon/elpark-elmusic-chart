@@ -1,0 +1,77 @@
+.albumItem {
+  display: flex;
+  align-items: center;
+
+  border-radius: 0.25rem;
+  padding: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.albumItem:hover {
+  background-color: #1e1e1e;
+}
+
+.albumItem img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.25rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.rankContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-width: 6.3rem;
+  height: 5rem;
+}
+
+.rankContainer > :last-child {
+  opacity: 0.5;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 30rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mainInfo h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: -1px;
+  line-height: 1.75;
+  max-width: 30rem;
+}
+
+.mainInfo p {
+  padding-top: 0.625rem;
+  font-size: 1.1rem;
+  letter-spacing: -1px;
+  opacity: 0.5;
+}
+
+.subInfo {
+  display: flex;
+  margin-left: auto;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.subInfo > * {
+  margin-left: 1rem;
+  text-align: center;
+  width: 7rem;
+}
