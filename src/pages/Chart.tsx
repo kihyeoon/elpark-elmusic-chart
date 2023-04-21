@@ -29,7 +29,11 @@ const Chart = () => {
             <p>Loading...</p>
           ) : (
             albums.map((album, index) => (
-              <ChartItem key={index} album={album} />
+              <ChartItem
+                key={album.id.attributes["im:id"]}
+                album={album}
+                index={index}
+              />
             ))
           )}
         </ul>
