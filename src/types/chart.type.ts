@@ -1,0 +1,115 @@
+export interface ChartData {
+  feed: Feed;
+}
+
+export interface Feed {
+  author: Author;
+  entry: Album[];
+  updated: Label;
+  rights: Label;
+  title: Label;
+  icon: Label;
+  link: Link[];
+  id: Label;
+}
+
+export interface Author {
+  name: Label;
+  uri: Label;
+}
+
+export interface Label {
+  label: string;
+}
+
+export interface Album {
+  "im:name": Label;
+  "im:image": IMImage[];
+  "im:itemCount": Label;
+  "im:price": IMPrice;
+  "im:contentType": EntryIMContentType;
+  rights: Label;
+  title: Label;
+  link: Link;
+  id: ID;
+  "im:artist": IMArtist;
+  category: Category;
+  "im:releaseDate": IMReleaseDate;
+}
+
+export interface Category {
+  attributes: CategoryAttributes;
+}
+
+export interface CategoryAttributes {
+  "im:id": string;
+  term: string;
+  scheme: string;
+  label: string;
+}
+
+export interface ID {
+  label: string;
+  attributes: IDAttributes;
+}
+
+export interface IDAttributes {
+  "im:id": string;
+}
+
+export interface IMArtist {
+  label: string;
+  attributes: IMArtistAttributes;
+}
+
+export interface IMArtistAttributes {
+  href: string;
+}
+
+export interface EntryIMContentType {
+  "im:contentType": IMContentTypeIMContentType;
+  attributes: IMContentTypeAttributes;
+}
+
+export interface IMContentTypeAttributes {
+  term: string;
+  label: string;
+}
+
+export interface IMContentTypeIMContentType {
+  attributes: IMContentTypeAttributes;
+}
+
+export interface IMImage {
+  label: string;
+  attributes: IMImageAttributes;
+}
+
+export interface IMImageAttributes {
+  height: string;
+}
+
+export interface IMPrice {
+  label: string;
+  attributes: IMPriceAttributes;
+}
+
+export interface IMPriceAttributes {
+  amount: string;
+  currency: string;
+}
+
+export interface IMReleaseDate {
+  label: Date;
+  attributes: Label;
+}
+
+export interface Link {
+  attributes: LinkAttributes;
+}
+
+export interface LinkAttributes {
+  rel: string;
+  type?: string;
+  href: string;
+}
