@@ -1,11 +1,15 @@
-import { ChartData } from "../types/chart.type";
+import { Album, ChartData } from "../types/chart.type";
 import { BASE_URL } from "./const";
 
-export const getChart = async (): Promise<ChartData | null> => {
+export const getChart = async (): Promise<Album[] | null> => {
   try {
-    const ChartInfoResponse = await fetch(BASE_URL);
+    const response = await fetch(BASE_URL);
+    const ChartInfoResponse: ChartData = await response.json();
+    const {
+      feed: { entry: Albums },
+    } = ChartInfoResponse;
 
-    return ChartInfoResponse.ok ? ChartInfoResponse.json() : null;
+    return Albums;
   } catch (e) {
     console.error(e);
     return null;
