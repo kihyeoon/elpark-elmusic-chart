@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from "./Chart.module.css";
 import { Album } from "../types/chart.type";
 import ChartItem from "../components/ChartItem";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import ChartFilter from "../components/ChartFilter/ChartFilter";
+import { getChart } from "../api/getChart";
 
 const Chart = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -9,13 +12,29 @@ const Chart = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
-      );
-      const data = await response.json();
-      setAlbums(data.feed.entry);
+      const response = await getChart();
+      if (!response) return;
+      const {
+        feed: { entry },
+      } = response;
+      setAlbums(entry);
+      filterAlbums("asc", "");
       setLoading(false);
     })();
+  }, []);
+
+  const filterAlbums = useCallback((order: "asc" | "desc", search: string) => {
+    setAlbums((albums) =>
+      albums
+        .filter((album) =>
+          album["im:name"].label.toLowerCase().includes(search.toLowerCase())
+        )
+        .sort((a, b) =>
+          order === "asc"
+            ? a["im:name"].label.localeCompare(b["im:name"].label)
+            : b["im:name"].label.localeCompare(a["im:name"].label)
+        )
+    );
   }, []);
 
   return (
@@ -24,6 +43,7 @@ const Chart = () => {
         <h1 className={styles.title}>EL Chart: Top Albums</h1>
       </header>
       <main className={styles.albumChart}>
+        <ChartFilter onFilterChange={filterAlbums} />
         <ul>
           {loading ? (
             <p>Loading...</p>
