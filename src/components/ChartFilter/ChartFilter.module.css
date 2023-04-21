@@ -1,0 +1,11 @@
+.chartFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.chartFilter select,
+.chartFilter input {
+  margin-left: 0.5rem;
+}
