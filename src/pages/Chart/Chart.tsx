@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "./Chart.module.css";
-import { Album } from "../types/chart.type";
+import { Album } from "../../types/chart.type";
 
 import { useCallback, useEffect, useState } from "react";
-import ChartFilter from "../components/ChartFilter/ChartFilter";
-import { getChart } from "../api/getChart";
-import ChartItem from "../components/ChartItem/ChartItem";
+import ChartFilter from "../../components/ChartFilter/ChartFilter";
+import { getChart } from "../../api/getChart";
+import ChartItem from "../../components/ChartItem/ChartItem";
 
 const Chart = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -19,12 +19,12 @@ const Chart = () => {
         feed: { entry },
       } = response;
       setAlbums(entry);
-      filterAlbums("asc", "");
+      filterAndSortAlbums("asc", "");
       setLoading(false);
     })();
   }, []);
 
-  const filterAlbums = useCallback((order: "asc" | "desc", search: string) => {
+  const filterAndSortAlbums = useCallback((order: "asc" | "desc", search: string) => {
     setAlbums((albums) =>
       albums
         .filter((album) =>
@@ -44,7 +44,7 @@ const Chart = () => {
         <h1 className={styles.title}>EL Chart: Top Albums</h1>
       </header>
       <main className={styles.albumChart}>
-        <ChartFilter onFilterChange={filterAlbums} />
+        <ChartFilter onFilterChange={filterAndSortAlbums} />
         <ul>
           {loading ? (
             <p>Loading...</p>

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Chart from "./pages/Chart";
+import Chart from "./pages/Chart/Chart";
 
 function Router() {
   return (
