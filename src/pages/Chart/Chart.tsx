@@ -1,17 +1,27 @@
 import styles from "./Chart.module.css";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getChart } from "../../api/getChart";
 import { Album } from "../../types/chart.type";
 import ChartFilter, { Order } from "../../components/ChartFilter/ChartFilter";
 import ChartItem from "../../components/ChartItem/ChartItem";
+import { formatDateAndTime } from "../../utils/formatDateAndTime";
 
 const Chart = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
+  const updatedLabelRef = useRef<string | null>(null);
 
   const fetchChart = useCallback(async (order: Order, search: string) => {
-    const Albums = await getChart();
-    if (!Albums) return;
+    const response = await getChart();
+    if (!response) return;
+    const {
+      feed: {
+        entry: Albums,
+        updated: { label: updatedLabel },
+      },
+    } = response;
+
+    updatedLabelRef.current = formatDateAndTime(updatedLabel);
 
     setAlbums(
       Albums.filter((album) =>
@@ -32,6 +42,9 @@ const Chart = () => {
     <>
       <header>
         <h1 className={styles.title}>EL Chart: Top Albums</h1>
+        <div className={styles.updated}>
+          updated at {updatedLabelRef.current}
+        </div>
       </header>
       <main className={styles.albumChart}>
         <ChartFilter onFilterChange={fetchChart} />
