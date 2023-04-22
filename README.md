@@ -57,7 +57,6 @@
  ┃ ┗ 📂ScrollToTop
  ┃ ┃ ┣ 📜ScrollToTop.module.css
  ┃ ┃ ┗ 📜ScrollToTop.tsx
- ┣ 📂hooks
  ┣ 📂pages
  ┃ ┣ 📂AlbumDetail
  ┃ ┃ ┣ 📜AlbumDetail.module.css
