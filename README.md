@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+# 프로젝트 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. 구현 화면
 
-## Available Scripts
+- **차트 페이지**
 
-In the project directory, you can run:
+- **반응형**
 
-### `npm start`
+- **상세 페이지**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 2. 설치 및 실행방법
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+1. npm install
+2. npm start
+```
 
-### `npm test`
+## 3. 구현 요구 사항 목록
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**필수 구현**
 
-### `npm run build`
+- [x] URL을 통해 받은 JSON 데이터를 이용하여 Top 100 차트 페이지와 상세 페이지를 구현 합니다.
+- [x] 음원 이름으로 검색을 할 수 있어야 합니다.
+- [x] 음원 이름으로 정렬 (오름차순 / 내림차순) 할 수 있어야 합니다.
+- [x] Top 100 차트에서 각 음원을 클릭하면 상세 페이지로 이동 됩니다.
+- [x] 크로스 브라우징: Chrome, Firefox, Edge 또는 Safari 브라우저에서도 잘 보여야 합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**추가 사항**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] PC, 태블릿, 모바일 화면에서 UI가 깨지지 않습니다.
+- [x] Scroll to top 버튼을 클릭하면 페이지 최상단으로 이동합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 4. 사용 기술
 
-### `npm run eject`
+- **React**
+- **TypeScript**
+- **React-Router-Dom**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 5. 폴더 구조
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📜const.ts
+ ┃ ┗ 📜getChart.ts
+ ┣ 📂components
+ ┃ ┣ 📂ChartFilter
+ ┃ ┃ ┣ 📜ChartFilter.module.css
+ ┃ ┃ ┗ 📜ChartFilter.tsx
+ ┃ ┣ 📂ChartItem
+ ┃ ┃ ┣ 📜ChartItem.module.css
+ ┃ ┃ ┗ 📜ChartItem.tsx
+ ┃ ┗ 📂ScrollToTop
+ ┃ ┃ ┣ 📜ScrollToTop.module.css
+ ┃ ┃ ┗ 📜ScrollToTop.tsx
+ ┣ 📂hooks
+ ┣ 📂pages
+ ┃ ┣ 📂AlbumDetail
+ ┃ ┃ ┣ 📜AlbumDetail.module.css
+ ┃ ┃ ┗ 📜AlbumDetail.tsx
+ ┃ ┗ 📂Chart
+ ┃ ┃ ┣ 📜Chart.module.css
+ ┃ ┃ ┗ 📜Chart.tsx
+ ┣ 📂style
+ ┃ ┗ 📜reset.css
+ ┣ 📂types
+ ┃ ┗ 📜chart.type.ts
+ ┣ 📂utils
+ ┃ ┗ 📜formatDateAndTime.ts
+ ┣ 📜App.css
+ ┣ 📜App.tsx
+ ┣ 📜Router.tsx
+ ┣ 📜index.tsx
+ ┗ 📜react-app-env.d.ts
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 6. 과제 진행 시 주안점
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **스타일링**
 
-## Learn More
+  - 전문적이지 않아도 깔끔하게 보이는 디자인을 고민했고, 레이아웃을 잡는데에는 flex를 사용했습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - 반응형을 고려해서 스타일링을 했고, 각 브라우저와 테블릿, 모바일폰까지 확인 했습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - CSS Module을 사용해서 스타일링을 했고, reset.css를 사용해서 브라우저마다 다른 기본 스타일을 초기화 했습니다.
+
+- **컴포넌트**
+
+  - 컴포넌트는 기능별로 분리해서 작성했고, 재사용성을 고려해서 작성했습니다.
+
+- **상태관리**
+
+  - 디테일 페이지는 useLocation을 통해 받은 데이터를 사용했습니다. 받아온 데이터를 디스트럭처링 할당을 통해 가공하여 사용했습니다.
+
+## 7. 구현하지 못한 사항
+
+- 도메인 로직을 커스텀 훅으로 분리
+
+- 검색 결과가 없을 때 화면
+
+- 스티키 필터 컴포넌트
+
+- 검색 인풋 비우기 버튼
+
+- 검색 결과가 없을 때 화면
