@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 30rem;
+  width: 40vw;
   font-size: 1.1rem;
   letter-spacing: -1px;
   font-weight: 500;
@@ -52,11 +52,17 @@
 .mainInfo h2 {
   margin-bottom: 0.5rem;
   line-height: 1.75;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mainInfo p {
   padding-top: 0.625rem;
   opacity: 0.5;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subInfo {
@@ -93,7 +99,7 @@
   .subInfo > * {
     margin-left: 0;
     text-align: right;
-    width: 5rem;
+    width: 7.5rem;
   }
 
   .rankContainer,
@@ -108,14 +114,5 @@
 
   .mainInfo h2 {
     margin-bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .mainInfo p {
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
