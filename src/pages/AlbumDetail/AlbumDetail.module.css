@@ -41,10 +41,6 @@
   width: fit-content;
 }
 
-.releaseDate {
-  opacity: 0.5;
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -92,5 +88,10 @@
 
   .artist {
     font-size: 1.2rem;
+  }
+
+  .infoWrapper {
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
