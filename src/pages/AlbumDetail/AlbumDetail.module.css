@@ -22,6 +22,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-left: 2.5rem;
+  text-align: left;
 }
 
 .title {
@@ -65,4 +66,31 @@
 
 .secondary {
   opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .albumImage {
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .headerInfo {
+    padding-left: 0;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .artist {
+    font-size: 1.2rem;
+  }
 }

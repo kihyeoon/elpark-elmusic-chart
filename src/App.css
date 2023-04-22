@@ -3,7 +3,7 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 .App {
-  text-align: center;
+  text-align: left;
   --max-width: 67.5rem;
   margin: auto;
   max-width: var(--max-width);
@@ -12,6 +12,13 @@
 @media screen and (max-width: 1024px) {
   .App {
     --max-width: 60rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    --max-width: 100%;
+    padding: 0 1rem;
   }
 }
 
