@@ -41,7 +41,7 @@ const Chart = () => {
   return (
     <>
       <header className={styles.header}>
-        <h1 className={styles.title}>EL Chart: Top Albums</h1>
+        <h1 className={styles.title}>EL Music Album</h1>
         <div className={styles.updated}>
           updated at {updatedLabelRef.current}
         </div>
