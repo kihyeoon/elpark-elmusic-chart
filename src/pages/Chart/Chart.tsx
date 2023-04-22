@@ -6,6 +6,7 @@ import { Album } from "../../types/chart.type";
 import ChartFilter, { Order } from "../../components/ChartFilter/ChartFilter";
 import ChartItem from "../../components/ChartItem/ChartItem";
 import { formatDateAndTime } from "../../utils/formatDateAndTime";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 
 const Chart = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -60,6 +61,7 @@ const Chart = () => {
           ))}
         </ul>
       </main>
+      <ScrollToTop />
     </>
   );
 };
