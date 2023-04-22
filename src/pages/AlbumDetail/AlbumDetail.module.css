@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  margin-top: 5rem;
+  margin-bottom: 20px;
+  width: 100%;
+  font-weight: 500;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.albumImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 2.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: -0.15rem;
+}
+
+.artist {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.07rem;
+  width: fit-content;
+}
+
+.releaseDate {
+  opacity: 0.5;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0;
+  max-width: 50%;
+  min-height: 10rem;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.secondary {
+  opacity: 0.5;
+}
