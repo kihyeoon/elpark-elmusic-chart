@@ -1,12 +1,16 @@
 # 프로젝트 소개
+지원자: 방기현
 
 ## 1. 구현 화면
 
 - **차트 페이지**
+![Apr-22-2023 15-53-35](https://user-images.githubusercontent.com/102677317/233768136-3c9fbe9d-63a6-496a-a4e7-9bb898a2e7fd.gif)
 
 - **반응형**
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/102677317/233768187-dfe3460d-5c39-44ed-9e06-8e151a7ef71a.png">
 
 - **상세 페이지**
+<img width="1649" alt="image" src="https://user-images.githubusercontent.com/102677317/233768166-d31a7a48-2ab7-42e3-8221-2fae93aa4cea.png">
 
 ## 2. 설치 및 실행방법
 
