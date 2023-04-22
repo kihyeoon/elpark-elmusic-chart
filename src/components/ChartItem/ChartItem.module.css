@@ -1,11 +1,11 @@
 .albumItem {
   display: flex;
   align-items: center;
-
   border-radius: 0.25rem;
   padding: 1rem;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  -webkit-tap-highlight-color: #1e1e1e;
 }
 
 .albumItem:hover {
@@ -45,6 +45,7 @@
   font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;
+  -webkit-text-size-adjust: 100%;
 }
 
 .mainInfo h2 {

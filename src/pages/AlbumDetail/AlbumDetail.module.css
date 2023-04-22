@@ -35,6 +35,8 @@
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.07rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
