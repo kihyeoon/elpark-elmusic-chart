@@ -9,3 +9,11 @@
 .chartFilter input {
   margin-left: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .chartFilter select,
+  .chartFilter input {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}

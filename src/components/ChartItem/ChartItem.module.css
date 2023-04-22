@@ -1,11 +1,11 @@
 .albumItem {
   display: flex;
   align-items: center;
-
   border-radius: 0.25rem;
   padding: 1rem;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  -webkit-tap-highlight-color: #1e1e1e;
 }
 
 .albumItem:hover {
@@ -42,23 +42,20 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 30rem;
+  font-size: 1.1rem;
+  letter-spacing: -1px;
   font-weight: 500;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  -webkit-text-size-adjust: 100%;
 }
 
 .mainInfo h2 {
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  letter-spacing: -1px;
   line-height: 1.75;
-  max-width: 30rem;
 }
 
 .mainInfo p {
   padding-top: 0.625rem;
-  font-size: 1.1rem;
-  letter-spacing: -1px;
   opacity: 0.5;
 }
 
@@ -74,4 +71,51 @@
   margin-left: 1rem;
   text-align: center;
   width: 7rem;
+}
+
+@media (max-width: 768px) {
+  .albumItem {
+    padding: 0;
+  }
+
+  .albumItem img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+  }
+
+  .subInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+
+  .subInfo > * {
+    margin-left: 0;
+    text-align: right;
+    width: 5rem;
+  }
+
+  .rankContainer,
+  .mainInfo {
+    min-width: 3rem;
+    font-size: 1rem;
+  }
+
+  .mainInfo {
+    width: 50vw;
+  }
+
+  .mainInfo h2 {
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mainInfo p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

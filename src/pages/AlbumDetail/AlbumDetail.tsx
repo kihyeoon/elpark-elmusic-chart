@@ -36,7 +36,7 @@ const AlbumDetail = () => {
         <div className={styles.headerInfo}>
           <div className={styles.title}>{albumName}</div>
           <div className={styles.artist}>{albumArtist}</div>
-          <div className={styles.releaseDate}>
+          <div className={styles.secondary}>
             Release date {formatDateAndTime(albumReleaseDate)}
           </div>
         </div>
