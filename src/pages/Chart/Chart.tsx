@@ -51,12 +51,12 @@ const Chart = () => {
         <ChartFilter onFilterChange={fetchChart} />
         <ul>
           {albums.map((album, index) => (
-            <Link to={album.id.attributes["im:id"]} state={album}>
-              <ChartItem
-                key={album.id.attributes["im:id"]}
-                album={album}
-                index={index}
-              />
+            <Link
+              key={album.id.attributes["im:id"]}
+              to={album.id.attributes["im:id"]}
+              state={album}
+            >
+              <ChartItem album={album} index={index} />
             </Link>
           ))}
         </ul>
