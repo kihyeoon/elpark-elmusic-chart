@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, MouseEvent, useCallback, useState } from "react";
 import styles from "./ChartFilter.module.css";
 
 export type Order = "asc" | "desc";
@@ -11,15 +11,15 @@ const ChartFilter = ({ onFilterChange }: ChartFilterProps) => {
   const [order, setOrder] = useState<Order>("asc");
   const [search, setSearch] = useState<string>("");
 
-  const handleAscOrderChange = useCallback(() => {
-    setOrder("asc");
-    onFilterChange("asc", search);
-  }, [search, onFilterChange]);
-
-  const handleDescOrderChange = useCallback(() => {
-    setOrder("desc");
-    onFilterChange("desc", search);
-  }, [search, onFilterChange]);
+  const handleOrderChange = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      const newOrder =
+        e.currentTarget.innerText === "ASCENDING" ? "asc" : "desc";
+      setOrder(newOrder);
+      onFilterChange(newOrder, search);
+    },
+    [onFilterChange, search]
+  );
 
   const handleSearchChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,13 +34,13 @@ const ChartFilter = ({ onFilterChange }: ChartFilterProps) => {
     <div className={styles.chartFilter}>
       <label>
         <button
-          onClick={handleAscOrderChange}
+          onClick={handleOrderChange}
           className={order === "asc" ? styles.activeButton : ""}
         >
           ASCENDING
         </button>
         <button
-          onClick={handleDescOrderChange}
+          onClick={handleOrderChange}
           className={order === "desc" ? styles.activeButton : ""}
         >
           DESCENDING
